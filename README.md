@@ -3,11 +3,15 @@
 # To-Do-List-App
 
 > This is a simple page that lists the things that you need to do and allows you to mark them as complete when you're finished.
+
+## Live Demo
 > Live demo coming soon ⏳
 
 ## Built With
 
-- HTML, CSS and Javascript
+- HTML
+- CSS 
+- Javascript
 
 ### Technologies used 
 - Git, linters and Github  
@@ -29,3 +33,7 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
