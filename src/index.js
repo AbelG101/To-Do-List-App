@@ -9,8 +9,8 @@ const tasksList = [
   {
     description: 'Complete to do list project',
     completed: false,
-    index: 1
-  }
+    index: 1,
+  },
 ];
 
 const loadTasksToPage = () => {

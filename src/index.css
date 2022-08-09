@@ -46,6 +46,11 @@ main {
   border: none;
 }
 
+.task input {
+  width: auto;
+  margin-right: 10px;
+}
+
 .item input:focus {
   background-color: #e9e9ed;
 }
@@ -54,9 +59,9 @@ main {
   font-style: italic;
 }
 
-.task input {
-  width: auto;
-  margin-right: 10px;
+.task {
+  font-size: 0.8rem;
+  width: 100%;
 }
 
 .tasks-container .task {
@@ -65,11 +70,6 @@ main {
   justify-content: flex-start;
   border-bottom: 0.5px solid #d3d3d3;
   padding: 10px 20px;
-}
-
-.task {
-  font-size: 0.8rem;
-  width: 100%;
 }
 
 .task:last-child {
