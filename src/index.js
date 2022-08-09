@@ -1,4 +1,4 @@
-import './index.css'
+import './index.css';
 
 const tasksList = [
   {
@@ -9,7 +9,7 @@ const tasksList = [
   {
     description: 'Complete to do list project',
     completed: false,
-    index: 1,
+    index: 1
   }
 ];
 
@@ -24,10 +24,10 @@ const loadTasksToPage = () => {
     labelElt.appendChild(inputElt);
     labelElt.appendChild(document.createTextNode(task.description));
     tasksContainerElt.appendChild(labelElt);
-  })
-}
+  });
+};
 const onPageLoad = () => {
   loadTasksToPage();
-}
+};
 
 window.onload = onPageLoad();

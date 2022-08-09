@@ -27,7 +27,7 @@ main {
 
 .container {
   width: 90%;
-  box-shadow: rgba(0, 0, 0, 0.28) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.28) 0 3px 8px;
 }
 
 .container > .item {
@@ -54,6 +54,11 @@ main {
   font-style: italic;
 }
 
+.task input {
+  width: auto;
+  margin-right: 10px;
+}
+
 .tasks-container .task {
   display: flex;
   align-items: center;
@@ -67,13 +72,8 @@ main {
   width: 100%;
 }
 
-.task input {
-  width: auto;
-  margin-right: 10px;
-}
-
 .task:last-child {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .item .clear-all-btn {
