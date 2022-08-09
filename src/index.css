@@ -64,13 +64,12 @@ main {
 
 .task label {
   font-size: 0.8rem;
-  width: 95%;
+  width: 100%;
 }
 
 .task input {
   display: inline-block;
-  min-width: 5%;
-  width: 5%;
+  width: auto;
   margin-right: 10px;
 }
 
