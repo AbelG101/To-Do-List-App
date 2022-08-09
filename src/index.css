@@ -62,13 +62,12 @@ main {
   padding: 10px 20px;
 }
 
-.task label {
+.task {
   font-size: 0.8rem;
   width: 100%;
 }
 
 .task input {
-  display: inline-block;
   width: auto;
   margin-right: 10px;
 }
