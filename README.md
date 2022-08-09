@@ -14,7 +14,22 @@
 - Javascript
 
 ### Technologies used 
-- Git, linters and Github  
+- Git, linters, Github and Webpack.  
+
+
+## Setup
+To get a local copy up and running you'll need to have [NodeJS](https://nodejs.org/en/download/) installed on your local machine.
+
+### Install
+After installing NodeJS please follow the next steps...
+
+### Usage
+```bash
+`npm i` for installing dev dependecies.
+```
+```bash
+`npm run build` to run the project.
+```
 
 ## Author
 
@@ -36,4 +51,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
