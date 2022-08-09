@@ -9,10 +9,6 @@ html {
   font-size: calc(15px + 0.390625vw);
 }
 
-body {
-  padding: 10px;
-}
-
 a {
   text-decoration: none;
 }
@@ -66,7 +62,7 @@ main {
   padding: 10px 20px;
 }
 
-.task p {
+.task label {
   font-size: 0.8rem;
   width: 95%;
 }
@@ -89,4 +85,10 @@ main {
   border-radius: 0;
   border: none;
   color: #595959;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 60%;
+  }
 }
