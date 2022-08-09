@@ -29,4 +29,64 @@ main {
   height: 100vh;
 }
 
+.container {
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 3px 8px;
+}
 
+.container > .item {
+  border-bottom: 0.5px solid #d3d3d3;
+}
+
+.container .item:nth-child(1) {
+  padding: 10px 20px;
+}
+
+.item input {
+  padding: 8px 20px;
+  outline: none;
+  font-size: 0.8rem;
+  width: 100%;
+  border: none;
+}
+
+.item input:focus {
+  background-color: #e9e9ed;
+}
+
+.item input::placeholder {
+  font-style: italic;
+}
+
+.tasks-container .task {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 0.5px solid #d3d3d3;
+  padding: 10px 20px;
+}
+
+.task p {
+  font-size: 0.8rem;
+  width: 95%;
+}
+
+.task input {
+  display: inline-block;
+  min-width: 5%;
+  width: 5%;
+  margin-right: 10px;
+}
+
+.task:last-child {
+  border-bottom: 0px;
+}
+
+.item .clear-all-btn {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  border-radius: 0;
+  border: none;
+  color: #595959;
+}
