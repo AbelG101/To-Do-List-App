@@ -17,6 +17,11 @@ ul {
   list-style-type: none;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -38,42 +43,78 @@ main {
   padding: 10px 20px;
 }
 
-.item input {
+.item .task-adder-input {
   padding: 8px 20px;
-  outline: none;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   width: 100%;
-  border: none;
 }
 
-.task input {
+.task-content input {
   width: auto;
   margin-right: 10px;
 }
 
-.item input:focus {
+.item .task-adder-input:focus {
   background-color: #e9e9ed;
 }
 
-.item input::placeholder {
+.item .task-adder-input::placeholder {
   font-style: italic;
 }
 
 .task {
-  font-size: 0.8rem;
-  width: 100%;
-}
-
-.tasks-container .task {
   display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
   align-items: center;
-  justify-content: flex-start;
   border-bottom: 0.5px solid #d3d3d3;
-  padding: 10px 20px;
 }
 
 .task:last-child {
   border-bottom: 0;
+}
+
+.task .dots-icon,
+.trash-icon {
+  color: #a1a1a1;
+  cursor: move;
+}
+
+.task .trash-icon {
+  display: none;
+}
+
+.dots-icon.active {
+  display: none;
+}
+
+.trash-icon.active {
+  display: block;
+  cursor: pointer;
+}
+
+.trash-icon.active:hover {
+  color: #ff0000;
+}
+
+.tasks-container .task-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.task-content .task-value {
+  font-size: 0.85rem;
+  width: 100%;
+  padding: 10px 0;
+  outline: none;
+  cursor: text;
+  background-color: transparent;
+}
+
+.task.active {
+  background-color: #ffffcc;
 }
 
 .item .clear-all-btn {
