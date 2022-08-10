@@ -94,7 +94,7 @@ main {
 }
 
 .trash-icon.active:hover {
-  color: #ff0000;
+  color: #f00;
 }
 
 .tasks-container .task-content {
@@ -114,7 +114,7 @@ main {
 }
 
 .task.active {
-  background-color: #ffffcc;
+  background-color: #ffc;
 }
 
 .item .clear-all-btn {

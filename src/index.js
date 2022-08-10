@@ -1,5 +1,7 @@
 import './index.css';
-import { addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask } from './JS/taskOperations';
+import {
+   addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask 
+} from './JS/taskOperations.js';
 
 const onPageLoad = () => {
   loadTasksFromLS();
@@ -17,14 +19,13 @@ document.addEventListener('click', (e) => {
     return;
   }
   if (e.target.matches('.task-value')) {
-    let tasks = document.querySelectorAll('.task-value');
+    const tasks = document.querySelectorAll('.task-value');
     tasks.forEach((task, index) => {
       if (e.target === task) {
         highlightTask(index);
       }
     });
-  }
-  else {
+  } else {
     const deleteBtn = document.querySelectorAll('.trash-icon');
     deleteBtn.forEach((btn, index) => {
       if (e.target === btn) {
@@ -37,7 +38,7 @@ document.addEventListener('change', (e) => {
   if (!e.target.matches('.task-value')) {
     return;
   }
-  let tasks = document.querySelectorAll('.task-value');
+  const tasks = document.querySelectorAll('.task-value');
   tasks.forEach((task, index) => {
     if (e.target === task) {
       modifyTask(task.value, index);

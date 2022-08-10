@@ -1,13 +1,13 @@
 let tasksList = [];
 
-const addOnLocalStorage = task => {
+const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];
   tasksList.push(task);
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
 };
 
-const addTaskToPage = taskToBeDone => {
+const addTaskToPage = (taskToBeDone) => {
   const tasksContainerElt = document.querySelector('.tasks-container');
   const taskDiv = document.createElement('div');
   const taskContentDiv = document.createElement('div');
@@ -38,55 +38,55 @@ const loadTasksFromLS = () => {
     tasksList.forEach((taskToBeDone) => {
       addTaskToPage(taskToBeDone);
     });
-  }
-  else {
+  } else {
     tasksList = [];
   }
 };
 
-const addTaskToArray = taskToBeDone => {
+const addTaskToArray = (taskToBeDone) => {
   const task = {
     description: String,
     completed: false,
     index: Number,
-  }
+  };
   task.description = taskToBeDone;
   task.index = tasksList.length;
   addOnLocalStorage(task);
   addTaskToPage(task);
 };
 
-const removeTask = index => {
+const removeTask = (index) => {
   const tasksElt = document.querySelectorAll('.task');
   tasksList.splice(index, 1);
   tasksElt[index].remove();
-  for (let i=index+1; i < tasksList.length; i+=1) {
+  for (let i=index+1; i < tasksList.length; i += 1) {
     tasksList[i].index -= 1;
   }
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
-}
+};
 
 const modifyTask = (taskToBeDone, index) => {
   tasksList[index].description = taskToBeDone;
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
-}
+};
 
-const highlightTask = index => {
+const highlightTask = (index) => {
   const moveBtns = document.querySelectorAll('.fa.fa-ellipsis-v.dots-icon');
   const deleteBtns = document.querySelectorAll('.fa.fa-trash.trash-icon');
   const activeTasks = document.querySelectorAll('.task.active');
   const tasksElt = document.querySelectorAll('.task');
   activeTasks.forEach((activeTask) => {
     activeTask.classList.remove('active');
-  })
+  });
   moveBtns.forEach((btn, index) => {
     btn.classList.remove('active');
     deleteBtns[index].classList.remove('active');
-  })
+  });
 
   tasksElt[index].classList.toggle('active');
   moveBtns[index].classList.toggle('active');
   deleteBtns[index].classList.toggle('active');
-}
- 
-export {addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask};
+};
+export { 
+  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask 
+};
