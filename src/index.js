@@ -1,6 +1,6 @@
 import './index.css';
 import {
-   addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask 
+  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask,
 } from './JS/taskOperations.js';
 
 const onPageLoad = () => {

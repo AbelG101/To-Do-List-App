@@ -59,7 +59,7 @@ const removeTask = (index) => {
   const tasksElt = document.querySelectorAll('.task');
   tasksList.splice(index, 1);
   tasksElt[index].remove();
-  for (let i=index+1; i < tasksList.length; i += 1) {
+  for (let i = index + 1; i < tasksList.length; i += 1) {
     tasksList[i].index -= 1;
   }
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
@@ -87,6 +87,6 @@ const highlightTask = (index) => {
   moveBtns[index].classList.toggle('active');
   deleteBtns[index].classList.toggle('active');
 };
-export { 
-  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask 
+export {
+  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask,
 };
