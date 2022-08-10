@@ -1,33 +1,46 @@
 import './index.css';
+import { addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask } from './JS/script';
 
-const tasksList = [
-  {
-    description: 'Wash Dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Complete to do list project',
-    completed: false,
-    index: 1,
-  },
-];
-
-const loadTasksToPage = () => {
-  const tasksContainerElt = document.querySelector('.tasks-container');
-  tasksList.forEach((task) => {
-    const labelElt = document.createElement('label');
-    const inputElt = document.createElement('INPUT');
-    labelElt.setAttribute('class', 'task');
-    inputElt.setAttribute('type', 'checkbox');
-    inputElt.checked = task.completed;
-    labelElt.appendChild(inputElt);
-    labelElt.appendChild(document.createTextNode(task.description));
-    tasksContainerElt.appendChild(labelElt);
-  });
-};
 const onPageLoad = () => {
-  loadTasksToPage();
+  loadTasksFromLS();
 };
-
 window.onload = onPageLoad();
+
+const addTaskInput = document.querySelector('.task-adder-input');
+addTaskInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    addTaskToArray(addTaskInput.value);
+  }
+});
+document.addEventListener('click', (e) => {
+  if (!(e.target.matches('.task-value') || e.target.matches('.trash-icon'))) {
+    return;
+  }
+  if (e.target.matches('.task-value')) {
+    let tasks = document.querySelectorAll('.task-value');
+    tasks.forEach((task, index) => {
+      if (e.target === task) {
+        highlightTask(index);
+      }
+    });
+  }
+  else {
+    const deleteBtn = document.querySelectorAll('.trash-icon');
+    deleteBtn.forEach((btn, index) => {
+      if (e.target === btn) {
+        removeTask(index);
+      }
+    });
+  }
+});
+document.addEventListener('change', (e) => {
+  if (!e.target.matches('.task-value')) {
+    return;
+  }
+  let tasks = document.querySelectorAll('.task-value');
+  tasks.forEach((task, index) => {
+    if (e.target === task) {
+      modifyTask(task.value, index);
+    }
+  });
+});
