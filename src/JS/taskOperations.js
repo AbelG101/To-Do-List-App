@@ -1,8 +1,6 @@
 let tasksList = [];
 
-const getTasksList = () => {
-  return tasksList;
-};
+const getTasksList = () => tasksList;
 const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];
@@ -94,9 +92,10 @@ const highlightTask = (index) => {
 const clearCompletedTasks = () => {
   const tasksElt = document.querySelectorAll('.task');
   tasksList.forEach((task, index) => {
-    if (task.completed)
+    if (task.completed) {
       tasksElt[index].remove();
-  })
+    }
+  });
   tasksList = tasksList.filter((task) => task.completed === false);
   for (let i = tasksList.length - 1; i >= 0; i -= 1) {
     tasksList[i].index = i;
