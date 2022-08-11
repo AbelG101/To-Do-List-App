@@ -88,5 +88,5 @@ const highlightTask = (index) => {
   deleteBtns[index].classList.toggle('active');
 };
 export {
-  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask,
+  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask, tasksList,
 };
