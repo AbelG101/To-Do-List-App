@@ -1,5 +1,8 @@
 let tasksList = [];
 
+const getTasksList = () => {
+  return tasksList;
+};
 const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];
@@ -88,12 +91,12 @@ const highlightTask = (index) => {
   deleteBtns[index].classList.toggle('active');
 };
 
-const  clearCompletedTasks = () => {
+const clearCompletedTasks = () => {
   const tasksElt = document.querySelectorAll('.task');
   tasksList = tasksList.filter((task, index) => {
     if (task.completed) {
       tasksElt[index].remove();
-
+      return;
     } else {
       return task;
     }
@@ -104,5 +107,11 @@ const  clearCompletedTasks = () => {
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
 };
 export {
-  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask, tasksList, clearCompletedTasks
+  addTaskToArray,
+  loadTasksFromLS,
+  modifyTask,
+  highlightTask,
+  removeTask,
+  getTasksList,
+  clearCompletedTasks,
 };

@@ -144,7 +144,7 @@ main {
   background-color: transparent;
 }
 
-input:checked~.task-value {
+input:checked ~ .task-value {
   text-decoration: line-through;
   opacity: 0.4;
 }

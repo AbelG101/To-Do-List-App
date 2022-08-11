@@ -1,6 +1,6 @@
 import './index.css';
 import {
-  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask, clearCompletedTasks
+  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask, clearCompletedTasks,
 } from './JS/taskOperations.js';
 import updateTaskStatus from './JS/statusUpdates.js';
 
@@ -49,7 +49,7 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('change', (e) => {
-  if (!(e.target.matches('.task-value') || e.target.matches('input[type=checkbox]') )) {
+  if (!(e.target.matches('.task-value') || e.target.matches('input[type=checkbox]'))) {
     return;
   }
   if (e.target.matches('.task-value')) {
@@ -62,7 +62,7 @@ document.addEventListener('change', (e) => {
   } else {
     const checkBoxes = document.querySelectorAll('input[type=checkbox]');
     checkBoxes.forEach((checkBox, index) => {
-      if (e.target == checkBox) {
+      if (e.target === checkBox) {
         updateTaskStatus(index);
       }
     });

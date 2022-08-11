@@ -1,6 +1,7 @@
-import { tasksList } from "./taskOperations.js";
+import { getTasksList } from './taskOperations.js';
 
 const updateTaskStatus = (index) => {
+  const tasksList = getTasksList();
   if (tasksList[index].completed === true) {
     tasksList[index].completed = false;
   } else {
