@@ -41,6 +41,9 @@ main {
 
 .container .item:nth-child(1) {
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container .item:nth-child(2) {
@@ -49,7 +52,19 @@ main {
   align-items: center;
 }
 
+.item .sync-btn {
+  font-size: 0.85rem;
+  color: #a1a1a1;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.item .sync-btn:hover {
+  color: #595959;
+}
+
 .item .task-adder-input {
+  color: #595959;
   padding: 8px 0 8px 20px;
   font-size: 0.85rem;
   width: 100%;
@@ -66,6 +81,7 @@ main {
 }
 
 .add-task-btn {
+  font-size: 0.85rem;
   margin-right: 20px;
   color: #d3d3d3;
   cursor: pointer;
