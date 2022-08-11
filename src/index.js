@@ -1,6 +1,6 @@
 import './index.css';
 import {
-  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask,
+  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask, clearCompletedTasks
 } from './JS/taskOperations.js';
 import updateTaskStatus from './JS/statusUpdates.js';
 
@@ -11,7 +11,7 @@ window.onload = onPageLoad();
 
 const addTaskInput = document.querySelector('.task-adder-input');
 const addTaskBtn = document.querySelector('.add-task-btn');
-const checkBoxes = document.querySelectorAll('input[type=checkbox]');
+const clearAllBtn = document.querySelector('.clear-all-btn');
 addTaskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     const taskValue = addTaskInput.value.trim();
@@ -60,10 +60,14 @@ document.addEventListener('change', (e) => {
       }
     });
   } else {
+    const checkBoxes = document.querySelectorAll('input[type=checkbox]');
     checkBoxes.forEach((checkBox, index) => {
       if (e.target == checkBox) {
         updateTaskStatus(index);
       }
     });
   }
+});
+clearAllBtn.addEventListener('click', () => {
+  clearCompletedTasks();
 });
