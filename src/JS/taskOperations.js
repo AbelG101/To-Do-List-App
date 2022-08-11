@@ -87,6 +87,22 @@ const highlightTask = (index) => {
   moveBtns[index].classList.toggle('active');
   deleteBtns[index].classList.toggle('active');
 };
+
+const  clearCompletedTasks = () => {
+  const tasksElt = document.querySelectorAll('.task');
+  tasksList = tasksList.filter((task, index) => {
+    if (task.completed) {
+      tasksElt[index].remove();
+
+    } else {
+      return task;
+    }
+  });
+  for (let i = tasksList.length - 1; i >= 0; i -= 1) {
+    tasksList[i].index = i;
+  }
+  localStorage.setItem('tasks: ', JSON.stringify(tasksList));
+};
 export {
-  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask, tasksList,
+  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask, tasksList, clearCompletedTasks
 };
