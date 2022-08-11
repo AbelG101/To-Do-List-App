@@ -93,14 +93,11 @@ const highlightTask = (index) => {
 
 const clearCompletedTasks = () => {
   const tasksElt = document.querySelectorAll('.task');
-  tasksList = tasksList.filter((task, index) => {
-    if (task.completed) {
+  tasksList.forEach((task, index) => {
+    if (task.completed)
       tasksElt[index].remove();
-      return;
-    } else {
-      return task;
-    }
-  });
+  })
+  tasksList = tasksList.filter((task) => task.completed === false);
   for (let i = tasksList.length - 1; i >= 0; i -= 1) {
     tasksList[i].index = i;
   }
