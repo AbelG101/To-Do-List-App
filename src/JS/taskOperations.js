@@ -59,8 +59,11 @@ const removeTask = (index) => {
   const tasksElt = document.querySelectorAll('.task');
   tasksList.splice(index, 1);
   tasksElt[index].remove();
-  for (let i = index + 1; i < tasksList.length; i += 1) {
-    tasksList[i].index -= 1;
+  for (let i = tasksList.length - 1; i >= 0; i -= 1) {
+    tasksList[i].index = i;
+  }
+  for (let i = 0; i < tasksList.length; i += 1) {
+    console.log( tasksList[i].description + " " + tasksList[i].index );
   }
   localStorage.setItem('tasks: ', JSON.stringify(tasksList));
 };
