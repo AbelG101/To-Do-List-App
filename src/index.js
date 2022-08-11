@@ -12,13 +12,19 @@ const addTaskInput = document.querySelector('.task-adder-input');
 const addTaskBtn = document.querySelector('.add-task-btn');
 addTaskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
-    addTaskToArray(addTaskInput.value);
-    addTaskInput.value = "";
+    const taskValue = addTaskInput.value.trim();
+    if (taskValue !== "") {
+      addTaskToArray(taskValue);
+      addTaskInput.value = "";
+    }
   }
 });
 addTaskBtn.addEventListener('click', () => {
-  addTaskToArray(addTaskInput.value);
-  addTaskInput.value = "";
+  const taskValue = addTaskInput.value.trim();
+  if (taskValue !== "") {
+    addTaskToArray(taskValue);
+    addTaskInput.value = "";
+  }
 });
 document.addEventListener('click', (e) => {
   if (!(e.target.matches('.task-value') || e.target.matches('.trash-icon'))) {
