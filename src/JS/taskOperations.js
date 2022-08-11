@@ -1,5 +1,6 @@
 let tasksList = [];
 
+const getTasksList = () => tasksList;
 const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];
@@ -87,6 +88,26 @@ const highlightTask = (index) => {
   moveBtns[index].classList.toggle('active');
   deleteBtns[index].classList.toggle('active');
 };
+
+const clearCompletedTasks = () => {
+  const tasksElt = document.querySelectorAll('.task');
+  tasksList.forEach((task, index) => {
+    if (task.completed) {
+      tasksElt[index].remove();
+    }
+  });
+  tasksList = tasksList.filter((task) => task.completed === false);
+  for (let i = tasksList.length - 1; i >= 0; i -= 1) {
+    tasksList[i].index = i;
+  }
+  localStorage.setItem('tasks: ', JSON.stringify(tasksList));
+};
 export {
-  addTaskToArray, loadTasksFromLS, modifyTask, highlightTask, removeTask,
+  addTaskToArray,
+  loadTasksFromLS,
+  modifyTask,
+  highlightTask,
+  removeTask,
+  getTasksList,
+  clearCompletedTasks,
 };

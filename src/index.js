@@ -1,7 +1,8 @@
 import './index.css';
 import {
-  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask,
+  addTaskToArray, highlightTask, loadTasksFromLS, modifyTask, removeTask, clearCompletedTasks,
 } from './JS/taskOperations.js';
+import updateTaskStatus from './JS/statusUpdates.js';
 
 const onPageLoad = () => {
   loadTasksFromLS();
@@ -10,6 +11,7 @@ window.onload = onPageLoad();
 
 const addTaskInput = document.querySelector('.task-adder-input');
 const addTaskBtn = document.querySelector('.add-task-btn');
+const clearAllBtn = document.querySelector('.clear-all-btn');
 addTaskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     const taskValue = addTaskInput.value.trim();
@@ -47,13 +49,25 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('change', (e) => {
-  if (!e.target.matches('.task-value')) {
+  if (!(e.target.matches('.task-value') || e.target.matches('input[type=checkbox]'))) {
     return;
   }
-  const tasks = document.querySelectorAll('.task-value');
-  tasks.forEach((task, index) => {
-    if (e.target === task) {
-      modifyTask(task.value, index);
-    }
-  });
+  if (e.target.matches('.task-value')) {
+    const tasks = document.querySelectorAll('.task-value');
+    tasks.forEach((task, index) => {
+      if (e.target === task) {
+        modifyTask(task.value, index);
+      }
+    });
+  } else {
+    const checkBoxes = document.querySelectorAll('input[type=checkbox]');
+    checkBoxes.forEach((checkBox, index) => {
+      if (e.target === checkBox) {
+        updateTaskStatus(index);
+      }
+    });
+  }
+});
+clearAllBtn.addEventListener('click', () => {
+  clearCompletedTasks();
 });

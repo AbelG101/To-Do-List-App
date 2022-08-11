@@ -64,7 +64,7 @@ main {
 }
 
 .item .task-adder-input {
-  color: #595959;
+  color: #404040;
   padding: 8px 0 8px 20px;
   font-size: 0.85rem;
   width: 100%;
@@ -142,6 +142,11 @@ main {
   outline: none;
   cursor: text;
   background-color: transparent;
+}
+
+input:checked ~ .task-value {
+  text-decoration: line-through;
+  opacity: 0.4;
 }
 
 .task.active {
