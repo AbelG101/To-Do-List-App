@@ -6,7 +6,7 @@
 
   
 
-> This is a simple page that lists the things that you need to do and allows you to mark them as complete when you're finished.
+> This is a simple page that lists the tasks that you need to do and allows you to mark them as complete when you're finished.
 
   
 
