@@ -13,17 +13,17 @@ const addTaskBtn = document.querySelector('.add-task-btn');
 addTaskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     const taskValue = addTaskInput.value.trim();
-    if (taskValue !== "") {
+    if (taskValue !== '') {
       addTaskToArray(taskValue);
-      addTaskInput.value = "";
+      addTaskInput.value = '';
     }
   }
 });
 addTaskBtn.addEventListener('click', () => {
   const taskValue = addTaskInput.value.trim();
-  if (taskValue !== "") {
+  if (taskValue !== '') {
     addTaskToArray(taskValue);
-    addTaskInput.value = "";
+    addTaskInput.value = '';
   }
 });
 document.addEventListener('click', (e) => {
