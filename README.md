@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-> Live demo coming soon ⏳
+> [click here](https://abelg101.github.io/To-Do-List-App/) to checkout the live working demo
 
   
 
