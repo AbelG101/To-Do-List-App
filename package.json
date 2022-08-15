@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --open",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/AbelG101/To-Do-List-App/issues"
   },
-  "homepage": "https://github.com/AbelG101/To-Do-List-App#readme",
+  "homepage": "https://AbelG101.github.io/To-Do-List-App",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
@@ -30,5 +31,8 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
