@@ -81,4 +81,15 @@ describe('check for add-delete operations', () => {
   expect(tasksValueElt.value).toBe('task-a');
   });
 
+  test('should add task to local storage', () => {
+    let tasksList = getTasksList();
+    const task = {
+      description: 'task1',
+      completed: false,
+      index: 0,
+    };
+    addOnLocalStorage(task);
+    tasksList = getTasksList();
+    expect(tasksList.length).toBeGreaterThanOrEqual(0);
+  });
 });
