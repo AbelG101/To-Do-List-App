@@ -119,4 +119,12 @@ describe("check for add-delete operations", () => {
     const tasksList = getTasksList();
     expect(tasksList.length).toBeGreaterThanOrEqual(0);
   });
+
+  test("properly change the task", () => {
+    const modifiedTask = "clean the dishes";
+    addTaskToArray("finish the unit-testing project");
+    modifyTask(modifiedTask, 0);
+    const tasksList = getTasksList();
+    expect(tasksList[0].description).toBe(modifiedTask);
+  });
 });
