@@ -1,7 +1,9 @@
 let tasksList = [];
 
 const getTasksList = () => tasksList;
-const setTasksList = newTasksList => tasksList = newTasksList;
+const setTasksList = (newTasksList) => {
+  tasksList = newTasksList;
+};
 const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];

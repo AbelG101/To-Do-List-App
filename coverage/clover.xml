@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660733318052" clover="3.2.0">
-  <project timestamp="1660733318052" name="All files">
+<coverage generated="1660736300065" clover="3.2.0">
+  <project timestamp="1660736300066" name="All files">
     <metrics statements="75" coveredstatements="65" conditionals="6" coveredconditionals="3" methods="15" coveredmethods="10" elements="96" coveredelements="78" complexity="0" loc="75" ncloc="75" packages="1" files="1" classes="1"/>
     <file name="taskOperations.js" path="C:\Users\Sendy Inieke\Documents\Project\Microverse Career\Module_2\Pair-Programming\To-Do-List-App\src\JS\taskOperations.js">
       <metrics statements="75" coveredstatements="65" conditionals="6" coveredconditionals="3" methods="15" coveredmethods="10"/>
