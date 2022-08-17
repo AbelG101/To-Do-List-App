@@ -92,4 +92,9 @@ describe('check for add-delete operations', () => {
     tasksList = getTasksList();
     expect(tasksList.length).toBeGreaterThanOrEqual(0);
   });
+
+  test('properly get list of tasks array of objects', () => {
+    const tasksList = getTasksList();
+    expect(tasksList.length).toBeGreaterThanOrEqual(0);
+  });
 });
