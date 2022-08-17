@@ -33,13 +33,20 @@
 - Git, linters, Github and Webpack.
 
   
-  
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+
+### Prerequisites
+
+- use git clone in order to get the copy this repo. You need to have atleast basic understanding of JavaScript.
+
 
 ## Setup
 
 To get a local copy up and running you'll need to have [NodeJS](https://nodejs.org/en/download/) installed on your local machine.
 
-  
 
 ### Install
 
@@ -49,22 +56,35 @@ After installing NodeJS please follow the next steps...
 
 ### Usage
 
+-- To clone this project use:
 ```bash
 
-npm i
+git clone https://github.com/AbelG101/To-Do-List-App.git
+
+```
+-- for installing dev dependecies use:
+
+```bash
+
+npm install
 
 ```
 
--- for installing dev dependecies.
+-- to run the project use:
 
 ```bash
 
 npm run build
 
 ```
--- to run the project.
 
-  
+-- After installing the dependencies you can run tests using this command:
+
+```bash
+
+npm run test
+
+```
 
 ## Author
 
