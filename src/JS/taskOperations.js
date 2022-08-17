@@ -1,6 +1,7 @@
 let tasksList = [];
 
 const getTasksList = () => tasksList;
+const setTasksList = newTasksList => tasksList = newTasksList;
 const addOnLocalStorage = (task) => {
   tasksList = JSON.parse(localStorage.getItem('tasks: '));
   if (tasksList == null) tasksList = [];
@@ -104,10 +105,13 @@ const clearCompletedTasks = () => {
 };
 export {
   addTaskToArray,
+  addTaskToPage,
+  addOnLocalStorage,
   loadTasksFromLS,
   modifyTask,
   highlightTask,
   removeTask,
   getTasksList,
+  setTasksList,
   clearCompletedTasks,
 };
