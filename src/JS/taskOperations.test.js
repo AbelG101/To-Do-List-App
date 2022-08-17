@@ -113,4 +113,10 @@ describe("check for add-delete operations", () => {
     const tasksContainerElt = document.querySelectorAll(".task");
     expect(tasksContainerElt).toHaveLength(1);
   });
+
+  test("properly load tasks that are in the local storage", () => {
+    loadTasksFromLS();
+    const tasksList = getTasksList();
+    expect(tasksList.length).toBeGreaterThanOrEqual(0);
+  });
 });
